@@ -32,7 +32,6 @@ public class Main {
             if (word.length() >= MAX_WORD_LENGTH) {
                 return "Слово превышает " + MAX_WORD_LENGTH + " симоволов!";
             }
-
             if (Pattern.matches("(.*кн.*)", word)) {
                 return word;
             }
@@ -63,7 +62,6 @@ public class Main {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-
         return 0;
     }
 }
