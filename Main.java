@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //ПКС-419 Федоров 19
@@ -11,6 +12,9 @@ public class Main {
         String inputWord = input.next();
 
         System.out.println(checkValidWord(inputWord));
+
+        System.out.println("Введите строку содержащую время");
+        findTimeInString(input.next());
 
         int[] inputNumbers = new int[10];
         for (int i = 0; i < inputNumbers.length; i++) {
@@ -63,6 +67,18 @@ public class Main {
             System.out.println(ex);
         }
         return 0;
+    }
+
+    //Задача 3
+    public static void findTimeInString(String string) {
+        try {
+            if (Pattern.matches("^.*(1?[0-9]|2[0-3]):[0-5][0-9].*", string)) {
+                System.out.printf("Строка содержит время%n"); //Текст 11:11
+            }
+            //".*(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9].*"
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 }
 
